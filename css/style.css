@@ -1,0 +1,283 @@
+:root {
+    --color-white: white;
+    --color-green: #00a878;
+    --color-red: #fe5e41;
+    --color-button: #fdffff;
+    --color-black: #242629;
+    --color-black-cards: #16161A;
+    --color-purple: #B69EFF;
+    --color-purple-dark: #7F5AF0;
+    --color-purple-cards: #EFF0F6;
+    --color-blue-card: #0E172C;
+    --color-gray: #94A1B2;
+    --little-letter: 18px;
+}
+
+body {
+    background: var(--color-black);
+    color: var(--color-white);
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    overscroll-behavior: unset;
+}
+
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.section__title-pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+    width: 100%;
+    margin: 40px 0;
+}
+
+/* .container__title-pricing {
+} */
+
+.title_content {
+    text-align: center;
+}
+
+.title_content h5 { 
+    color: var(--color-purple); 
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.title_content h1 { 
+    padding: 0 20px;
+    line-height: 48px;
+}
+
+.title_content p {
+    margin: 13px 0 40px 0;
+    padding: 0 80px;
+    line-height: 28px;
+    font-size: var(--little-letter);
+    font-weight: 400;
+    color: var(--color-gray);
+}
+
+.switch-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 16px;
+}
+.switch-button .switch-button__checkbox {
+    display: none;
+}
+.switch-button .switch-button__label {
+    background-color: var(--color-gray);
+    width: 4rem;
+    height: 2rem;
+    border-radius: 3rem;
+    display: inline-block;
+    position: relative;
+}
+.switch-button .switch-button__label:before {
+    transition: .2s;
+    display: block;
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--color-button);
+    content: '';
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1px var(--color-black);
+}
+
+.switch-button .switch-button__checkbox:checked + .switch-button__label {
+    background-color: var(--color-blue-card);
+}
+
+.switch-button .switch-button__checkbox:checked + .switch-button__label:before {
+    transform: translateX(2rem);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    justify-items: center;
+    margin: 0 24px;
+}
+
+.cards .card:nth-child(odd)  {
+    background: var(--color-black-cards);
+}
+
+.cards .card:nth-child(even)  {
+    background: var(--color-purple);
+    color: var(--color-blue-card);
+}
+
+.card {
+    border: 1px solid var(--color-purple-cards);
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 380px;
+    max-height: 700px;
+}
+
+.card .container_card {
+    margin-bottom: 72px;
+}
+
+.card .card-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.card:first-child .card-list label:nth-child(1) {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.card:first-child .card-list label:nth-child(2) {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.card:nth-child(2) .card-list label:nth-child(1) {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+.card p, label {
+    font-size: var(--little-letter);
+    margin: 0 0 10px 0;
+}
+
+.card .card-description {
+    margin: 24px 0;
+}
+
+.card .card-price {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.card .card-what-else {
+    margin: 24px 0 16px 0;
+    font-weight: 700;
+}
+
+.card:nth-child(odd) .card-what-else {
+    color: var(--color-white);
+}
+
+.card:nth-child(even) .card-what-else {
+    color: var(--color-black-cards);
+}
+
+.card:nth-child(odd) p {
+    color: var(--color-gray)
+}
+
+.card:nth-child(even) p {
+    color: var(--color-blue-card)
+}
+
+/* .card label:nth-child(even) {
+} */
+
+.card:nth-child(odd) i {
+    color: var(--color-purple-dark);
+    
+}
+
+.card:nth-child(even) i {
+    color: var(--color-blue-card);
+}
+
+.card .card-button {
+    display: flex;
+    justify-content: center;
+}
+
+.card button {
+    width: 280px;
+    height: 72px;
+    border-radius: 96px;
+    margin-top: 40px;
+    color: var(--color-white);
+    font-weight: 700;
+    font-family: 'Nunito', sans-serif;
+    font-size: var(--little-letter);
+}
+
+.card:nth-child(odd) button  {
+    background: var(--color-purple-dark);
+}
+
+.card:nth-child(even) button {
+    background: var(--color-blue-card);
+}
+
+@media screen and (min-width: 600px) {
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        justify-items: center;
+        margin: 0 24px;
+    }
+
+    .card {
+        max-width: 400px;
+        padding: 40px;
+        margin: 24px 0;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+
+    body {
+        overflow: auto;
+    }
+
+    h1 {
+        font-size: 50px;
+        font-weight: 700;
+        margin: 10px 0; 
+    }
+
+    .section__title-pricing {
+        margin: 80px 0 40px 0;
+    }
+
+    .title_content {
+        max-width: 818px;
+    }
+
+    .title_content p {
+        margin: 0 76px;
+        padding: 0 140px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 0;
+    }    
+}
+
+@media screen and (min-width: 1200px) {
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* margin: 0 100px 80px 100px; */
+        justify-items: center;
+        gap: 24px;
+    }    
+}
